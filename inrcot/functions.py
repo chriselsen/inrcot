@@ -125,7 +125,7 @@ def inreach_to_cot_xml(
     cot_stale = (
         datetime.datetime.now(datetime.timezone.utc)
         + datetime.timedelta(seconds=int(_cot_stale))
-    ).strftime(pytak.ISO_8601_UTC)
+    ).isoformat(sep='T',timespec='auto') # Convert to ISO_8601_UTC
 
     cot_type = feed_conf.get("cot_type", inrcot.DEFAULT_COT_TYPE)
 
