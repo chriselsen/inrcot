@@ -78,7 +78,7 @@ def make_feed_conf(section) -> dict:
     feed_user: str = section.get("FEED_USERNAME")
     if feed_pass and feed_user:
         feed_auth: BasicAuth = BasicAuth(feed_user, feed_pass)
-        feed_conf["feed_auth"] = str(feed_auth)
+        feed_conf["feed_auth"] = feed_auth
 
     return feed_conf
 
